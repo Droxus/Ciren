@@ -34,13 +34,14 @@ public class Player : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-
         Vector3 movement = new Vector3(moveVertical, 0.0f, -moveHorizontal);
         if (movement.magnitude > 1)
         {
             movement = movement.normalized;
         }
         
+        movement = Quaternion.Euler(0, transform.eulerAngles.y + 90, 0) * movement;
+
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
         float currentSpeed = isSprinting ? speed * sprintMultiplier : speed;
 

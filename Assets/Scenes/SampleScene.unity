@@ -458,6 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  sprintMultiplier: 1.75
 --- !u!54 &636053441
 Rigidbody:
   m_ObjectHideFlags: 0
